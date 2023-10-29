@@ -6,8 +6,8 @@ import Hero from '@/components/sections/Hero';
 import Services from '@/components/sections/Services';
 import Testimonials from '@/components/sections/Testimonials';
 
-const fetchData = async () => {
-  const res = await fetch(process.env.NEXT_PUBLIC_STORYBLOK_URL as string, {
+const fetchData = async (lang: string) => {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_STORYBLOK_URL as string}&language=${lang}`, {
     next: { revalidate: 10 }
   });
 
@@ -33,8 +33,8 @@ const fetchData = async () => {
   };
 };
 
-export default async function Home() {
-  const storyData = await fetchData();
+export default async function Home({ params: { lang } }: { params: { lang: string } }) {
+  const storyData = await fetchData(lang);
   return (
     <>
       <Navbar
