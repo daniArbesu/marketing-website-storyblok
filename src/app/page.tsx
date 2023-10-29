@@ -5,7 +5,7 @@ import FAQ from '@/components/sections/FAQ';
 import Hero from '@/components/sections/Hero';
 import Services from '@/components/sections/Services';
 import Testimonials from '@/components/sections/Testimonials';
-import { services, testimonials } from '@/constants/data';
+import { faqs, services, testimonials } from '@/constants/data';
 
 export default function Home() {
   return (
@@ -27,7 +27,7 @@ export default function Home() {
           phone="642 32 33 12"
           location="Spain"
         />
-        <FAQ />
+        <FAQ title="FAQ" faq_cards={faqs} />
       </main>
       <Footer />
     </>

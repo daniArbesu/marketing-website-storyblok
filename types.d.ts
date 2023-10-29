@@ -10,3 +10,8 @@ export interface Testimonial {
   image: string;
   comment: string;
 }
+
+export interface Faq {
+  question: string;
+  answer: string;
+}

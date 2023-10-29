@@ -1,4 +1,4 @@
-import { Service, Testimonial } from '../../types';
+import { Faq, Service, Testimonial } from '../../types';
 
 export const services: Service[] = [
   {
@@ -37,5 +37,16 @@ export const testimonials: Testimonial[] = [
     name: 'Jennifer',
     comment: 'Amazing Job',
     image: 'https://xsgames.co/randomusers/avatar.php?g=female'
+  }
+];
+
+export const faqs: Faq[] = [
+  {
+    question: 'What kind of websites do you do?',
+    answer: 'Anything from portfolios to business websites'
+  },
+  {
+    question: 'How can I book a service?',
+    answer: 'Best way is sending an email. Check out the contact section'
   }
 ];
