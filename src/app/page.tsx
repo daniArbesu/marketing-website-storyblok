@@ -20,7 +20,13 @@ export default function Home() {
         />
         <Services title="Services" service_cards={services} />
         <Testimonials title="What are our clients saying" testimonial_cards={testimonials} />
-        <Contact />
+        <Contact
+          title="Let's get in touch"
+          description="If you want to book for a session give us a call or email"
+          email="example@example.com"
+          phone="642 32 33 12"
+          location="Spain"
+        />
         <FAQ />
       </main>
       <Footer />
