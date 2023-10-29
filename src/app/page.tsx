@@ -11,7 +11,12 @@ export default function Home() {
     <>
       <Navbar title="Marketing" cta_button_text="Contact Us" />
       <main>
-        <Hero />
+        <Hero
+          title="Marketing Agency"
+          description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur saepe sint beatae nisi repellat dolorum, consectetur ducimus et error iusto cupiditate explicabo fugit, at rerum odit debitis harum delectus esse?"
+          cta_button_text="Book an interview"
+          picture="/images/hero-image.avif"
+        />
         <Services />
         <Testimonial />
         <Contact />
