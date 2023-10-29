@@ -9,7 +9,7 @@ import Testimonial from '@/components/sections/Testimonial';
 export default function Home() {
   return (
     <>
-      <Navbar />
+      <Navbar title="Marketing" cta_button_text="Contact Us" />
       <main>
         <Hero />
         <Services />
