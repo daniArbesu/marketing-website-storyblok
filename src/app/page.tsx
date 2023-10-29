@@ -7,7 +7,9 @@ import Services from '@/components/sections/Services';
 import Testimonials from '@/components/sections/Testimonials';
 
 const fetchData = async () => {
-  const res = await fetch(process.env.NEXT_PUBLIC_STORYBLOK_URL as string, { cache: 'no-store' });
+  const res = await fetch(process.env.NEXT_PUBLIC_STORYBLOK_URL as string, {
+    next: { revalidate: 10 }
+  });
 
   const storyData = await res.json();
   const {
