@@ -37,7 +37,7 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({ data }) => {
       <div className="flex h-full w-full flex-col justify-between rounded-2xl bg-neutral-800 px-5 py-5">
         <p className="text-xl leading-normal ">{comment}</p>
 
-        <Avatar image={image} name={name} />
+        <Avatar image={image.filename} name={name} />
       </div>
     </div>
   );

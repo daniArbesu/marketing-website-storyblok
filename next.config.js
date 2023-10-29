@@ -7,6 +7,11 @@ const nextConfig = {
         hostname: 'xsgames.co',
         port: '',
         pathname: '/randomusers/**'
+      },
+      {
+        protocol: 'https',
+        hostname: 'a.storyblok.com',
+        port: ''
       }
     ]
   }

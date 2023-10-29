@@ -1,4 +1,4 @@
-import { Faq, Service, Testimonial } from '../../types';
+/* import { Faq, Service, Testimonial } from '../../types';
 
 export const services: Service[] = [
   {
@@ -50,3 +50,4 @@ export const faqs: Faq[] = [
     answer: 'Best way is sending an email. Check out the contact section'
   }
 ];
+ */

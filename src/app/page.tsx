@@ -5,31 +5,65 @@ import FAQ from '@/components/sections/FAQ';
 import Hero from '@/components/sections/Hero';
 import Services from '@/components/sections/Services';
 import Testimonials from '@/components/sections/Testimonials';
-import { faqs, services, testimonials } from '@/constants/data';
 
-export default function Home() {
+const fetchData = async () => {
+  const res = await fetch(process.env.NEXT_PUBLIC_STORYBLOK_URL as string, { cache: 'no-store' });
+
+  const storyData = await res.json();
+  const {
+    navbar_section,
+    hero_section,
+    services_section,
+    testimonials_section,
+    contact_section,
+    faq_section,
+    footer_section
+  } = storyData.story.content;
+
+  return {
+    navbar_section: navbar_section[0],
+    hero_section: hero_section[0],
+    services_section: services_section[0],
+    testimonials_section: testimonials_section[0],
+    contact_section: contact_section[0],
+    faq_section: faq_section[0],
+    footer_section: footer_section[0]
+  };
+};
+
+export default async function Home() {
+  const storyData = await fetchData();
   return (
     <>
-      <Navbar title="Marketing" cta_button_text="Contact Us" />
+      <Navbar
+        title={storyData.navbar_section.title}
+        cta_button_text={storyData.navbar_section.cta_button_text}
+      />
       <main>
         <Hero
-          title="Marketing Agency"
-          description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur saepe sint beatae nisi repellat dolorum, consectetur ducimus et error iusto cupiditate explicabo fugit, at rerum odit debitis harum delectus esse?"
-          cta_button_text="Book an interview"
-          picture="/images/hero-image.avif"
+          title={storyData.hero_section.title}
+          description={storyData.hero_section.description}
+          cta_button_text={storyData.hero_section.cta_button_text}
+          picture={storyData.hero_section.picture.filename}
         />
-        <Services title="Services" service_cards={services} />
-        <Testimonials title="What are our clients saying" testimonial_cards={testimonials} />
+        <Services
+          title={storyData.services_section.title}
+          service_cards={storyData.services_section.services_card}
+        />
+        <Testimonials
+          title={storyData.testimonials_section.title}
+          testimonial_cards={storyData.testimonials_section.testimonial_cards}
+        />
         <Contact
-          title="Let's get in touch"
-          description="If you want to book for a session give us a call or email"
-          email="example@example.com"
-          phone="642 32 33 12"
-          location="Spain"
+          title={storyData.contact_section.title}
+          description={storyData.contact_section.description}
+          email={storyData.contact_section.email}
+          phone={storyData.contact_section.phone}
+          location={storyData.contact_section.location}
         />
-        <FAQ title="FAQ" faq_cards={faqs} />
+        <FAQ title={storyData.faq_section.title} faq_cards={storyData.faq_section.faq_card} />
       </main>
-      <Footer text="© 2023 Marketing Agency" />
+      <Footer text={storyData.footer_section.text} />
     </>
   );
 }

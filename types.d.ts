@@ -7,7 +7,7 @@ export interface Service {
 
 export interface Testimonial {
   name: string;
-  image: string;
+  image: { filename: string };
   comment: string;
 }
 
