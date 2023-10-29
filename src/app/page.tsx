@@ -29,7 +29,7 @@ export default function Home() {
         />
         <FAQ title="FAQ" faq_cards={faqs} />
       </main>
-      <Footer />
+      <Footer text="© 2023 Marketing Agency" />
     </>
   );
 }
