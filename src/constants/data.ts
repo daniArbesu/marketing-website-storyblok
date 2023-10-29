@@ -1,4 +1,4 @@
-import { Service } from '../../types';
+import { Service, Testimonial } from '../../types';
 
 export const services: Service[] = [
   {
@@ -19,5 +19,23 @@ export const services: Service[] = [
     description:
       'Brand new website + Ads Campaign for Google Ads to increase awareness of your business',
     price: '700 EUR'
+  }
+];
+
+export const testimonials: Testimonial[] = [
+  {
+    name: 'Timo',
+    comment: 'They did an amazing job with our bussiness',
+    image: 'https://xsgames.co/randomusers/avatar.php?g=male'
+  },
+  {
+    name: 'Paul',
+    comment: 'They did wonders',
+    image: 'https://xsgames.co/randomusers/avatar.php?g=male'
+  },
+  {
+    name: 'Jennifer',
+    comment: 'Amazing Job',
+    image: 'https://xsgames.co/randomusers/avatar.php?g=female'
   }
 ];

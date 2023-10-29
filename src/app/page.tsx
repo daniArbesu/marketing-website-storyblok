@@ -4,8 +4,8 @@ import Contact from '@/components/sections/Contact';
 import FAQ from '@/components/sections/FAQ';
 import Hero from '@/components/sections/Hero';
 import Services from '@/components/sections/Services';
-import Testimonial from '@/components/sections/Testimonial';
-import { services } from '@/constants/data';
+import Testimonials from '@/components/sections/Testimonials';
+import { services, testimonials } from '@/constants/data';
 
 export default function Home() {
   return (
@@ -19,7 +19,7 @@ export default function Home() {
           picture="/images/hero-image.avif"
         />
         <Services title="Services" service_cards={services} />
-        <Testimonial />
+        <Testimonials title="What are our clients saying" testimonial_cards={testimonials} />
         <Contact />
         <FAQ />
       </main>
