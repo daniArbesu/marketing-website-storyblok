@@ -5,6 +5,7 @@ import FAQ from '@/components/sections/FAQ';
 import Hero from '@/components/sections/Hero';
 import Services from '@/components/sections/Services';
 import Testimonial from '@/components/sections/Testimonial';
+import { services } from '@/constants/data';
 
 export default function Home() {
   return (
@@ -17,7 +18,7 @@ export default function Home() {
           cta_button_text="Book an interview"
           picture="/images/hero-image.avif"
         />
-        <Services />
+        <Services title="Services" service_cards={services} />
         <Testimonial />
         <Contact />
         <FAQ />
