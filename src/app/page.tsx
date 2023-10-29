@@ -61,7 +61,7 @@ export default async function Home() {
           phone={storyData.contact_section.phone}
           location={storyData.contact_section.location}
         />
-        <FAQ title={storyData.faq_section.title} faq_cards={storyData.faq_section.faq_card} />
+        <FAQ title={storyData.faq_section.title} faq_cards={storyData.faq_section.faq_cards} />
       </main>
       <Footer text={storyData.footer_section.text} />
     </>
